@@ -8,13 +8,17 @@ use Livewire\Component;
 class Members extends Component
 {
     public $members; // dari Models/Members.php
+    public $search;
     public $name, $email, $status, $number, $id_member; // mengisi dan menghapus data
     public $isModal;
 
     public function render()
     {
-        $this->members = Member::orderBy('created_at', 'DESC')->get();
-        return view('livewire.members');
+        $searchParams = '%' . $this->search . '%';
+        // $this->members = Member::orderBy('created_at', 'DESC')->get();
+        return view('livewire.members', [
+            'posts' => Member::where('name', 'like', $searchParams)->latest()->paginate(5),
+        ]);
     }
 
 

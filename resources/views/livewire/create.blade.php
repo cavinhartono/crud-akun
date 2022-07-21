@@ -7,6 +7,7 @@
     <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" role="dialog">
       <form>
         <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+          <h1 class="text-3xl text-center">Tambah Siswa</h1>
           <div class="">
             <div class="mb-4">
               <label for="nama" class="block text-gray-700 text-sm font-bold mb-2">Nama:</label>
@@ -30,11 +31,13 @@
               @enderror
             </div>
             <div class="mb-4">
-              <label for="jenis" class="block text-gray-700 text-sm font-bold mb-2">Status</label>
+              <label for="jenis" class="block text-gray-700 text-sm font-bold mb-2">Kehadiran</label>
               <select wire:model="status" class="shadow border-gray-300 appearance-none border rounded w-full px-3 py-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="jenis">
                 <option value="">Pilih</option>
-                <option value="0">Tidak Aktif</option>
-                <option value="1">Aktif</option>
+                <option value="0">Alfa</option>
+                <option value="1">Izin</option>
+                <option value="2">Sakit</option>
+                <option value="3">Hadir</option>
               </select>
               @error('status')
               <span class="text-red-700">{{ $message }}</span>

@@ -15,9 +15,13 @@ class Member extends Model
     public function getStatusLabelAttribute()
     {
         if ($this->status == 0) {
-            return '<span class="text-red-500">Tidak Aktif</span>';
+            return '<span class="text-red-500">Alfa</span>';
+        } elseif ($this->status == 1) {
+            return '<span class="text-yellow-600">Izin</span>';
+        } elseif ($this->status == 2) {
+            return '<span class="text-yellow-600">Sakit</span>';
         } else {
-            return '<span class="text-teal-600">Aktif</span>';
+            return '<span class="text-green-600">Hadir</span>';
         }
     }
 }
